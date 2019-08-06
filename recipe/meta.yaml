@@ -55,6 +55,10 @@ test:
     # Skip importing on Linux due to bad tensorflow import
     # Will be fixed by: https://github.com/conda-forge/tensorflow-feedstock/pull/69
     - caiman  # [not linux]
+  commands:
+    - caimanmanager.py install  # [not linux]
+    - caimanmanager.py check  # [not linux]
+    - caimanmanager.py test  # [not linux]
 
 about:
   home: http://github.com/flatironinstitute/caiman
