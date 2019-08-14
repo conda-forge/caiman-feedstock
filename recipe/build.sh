@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # This will allow them to be run on environment activation.
 
