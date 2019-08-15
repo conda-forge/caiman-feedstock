@@ -10,9 +10,8 @@ source:
   sha256: a5e2520bffb0618ed11088b6760cf0c31023b400cfd04e2924ff0fee5b35080a
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<36]
-  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -29,6 +28,7 @@ requirements:
     - bokeh
     - future
     - h5py
+    - holoviews
     - ipykernel
     - ipython
     - ipyparallel
@@ -52,13 +52,11 @@ requirements:
 
 test:
   imports:
-    # Skip importing on Linux due to bad tensorflow import
-    # Will be fixed by: https://github.com/conda-forge/tensorflow-feedstock/pull/69
-    - caiman  # [not linux]
+    - caiman
   commands:
-    - caimanmanager.py install  # [not linux]
-    - caimanmanager.py check  # [not linux]
-    - caimanmanager.py test  # [not linux]
+    - caimanmanager.py install
+    - caimanmanager.py check
+    - caimanmanager.py test
 
 about:
   home: http://github.com/flatironinstitute/caiman
