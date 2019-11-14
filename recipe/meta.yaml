@@ -1,5 +1,5 @@
 {% set name = "CaImAn" %}
-{% set version = "1.6.3" %}
+{% set version = "1.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 86c2d21705b9e5b7a1523501abba3d271753e761c6cb574b9f563dc36d0502aa
+  sha256: f7d5e34a92c19891cbd09137c4a3315d9a2cbadc582ef6d1ccfc27219a7fb367
 
 build:
   number: 0
@@ -44,7 +44,7 @@ requirements:
     - scikit-image
     - scikit-learn
     - spyder
-    - tifffile
+    - tifffile =0.15.1
     - tk >=8,!=8.6.9
     - tqdm
     - pyqtgraph
