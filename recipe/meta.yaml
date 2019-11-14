@@ -44,7 +44,7 @@ requirements:
     - scikit-image
     - scikit-learn
     - spyder
-    - tifffile
+    - tifffile=1.15.1
     - tk >=8,!=8.6.9
     - tqdm
     - pyqtgraph
