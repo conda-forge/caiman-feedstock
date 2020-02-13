@@ -2,4 +2,4 @@ mesa-libGL
 mesa-dri-drivers
 libselinux
 libXdamage
-libXxf86vm
+libXxf86vmxorg-x11-server-Xorg

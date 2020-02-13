@@ -10,7 +10,7 @@ source:
   sha256: 2a34f0187d2b45f87ea0d318b05fccbbc2eb4a9788e76f79740b25cf1bec0d2e
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<36]
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
     - ipython
     - ipyparallel
     - jupyter
-    - matplotlib
+    - matplotlib-base
     - mypy
     - nose
     - numpy
