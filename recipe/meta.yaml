@@ -1,5 +1,5 @@
 {% set name = "CaImAn" %}
-{% set version = "1.8.1" %}
+{% set version = "1.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 2a34f0187d2b45f87ea0d318b05fccbbc2eb4a9788e76f79740b25cf1bec0d2e
+  sha256: 3475d351924d2690eaa41bf6d57ceb35dd227dd46bc645a6d6349caa7882c4c1
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: true  # [py<36]
 
 requirements:
   host:
@@ -63,7 +63,7 @@ about:
   license: GPL-2.0
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'Calcium imaging analysis - 1p, 2p microscopy'
+  summary: Calcium imaging analysis - 1p, 2p microscopy
 
   description: |
     CaImAn implements a set of essential methods required in the analysis
