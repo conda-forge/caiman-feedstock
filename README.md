@@ -5,9 +5,13 @@ Home: http://github.com/flatironinstitute/caiman
 
 Package license: GPL-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/caiman-feedstock/blob/master/LICENSE.txt)
 
 Summary: Calcium imaging analysis - 1p, 2p microscopy
+
+Development: https://github.com/flatironinstitute/CaImAn
+
+Documentation: http://caiman.readthedocs.io
 
 CaImAn implements a set of essential methods required in the analysis
 pipeline of large scale calcium imaging data. Fast and scalable algorithms
