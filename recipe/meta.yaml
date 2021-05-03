@@ -60,7 +60,7 @@ test:
 
 about:
   home: http://github.com/flatironinstitute/caiman
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: Calcium imaging analysis - 1p, 2p microscopy
