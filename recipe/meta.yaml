@@ -66,12 +66,11 @@ about:
   summary: Calcium imaging analysis - 1p, 2p microscopy
 
   description: |
-    CaImAn implements a set of essential methods required in the analysis
-    pipeline of large scale calcium imaging data. Fast and scalable algorithms
-    are implemented for motion correction, source extraction, spike
-    deconvolution, and component registration across multiple days. It is
-    suitable for both two-photon and one-photon fluorescence microscopy data,
-    and can be run in both batch and online mode.
+    CaImAn implements a set of essential methods required in analysis
+    pipelines for large scale calcium imaging data. It implements fast, scalable algorithms
+    for motion correction, source extraction, spike deconvolution, and component
+    registration across multiple days. It is suitable for both two-photon and one-photon
+    fluorescence microscopy data, and can be run in both batch and online modes.
   doc_url: http://caiman.readthedocs.io
   dev_url: https://github.com/flatironinstitute/CaImAn
 
