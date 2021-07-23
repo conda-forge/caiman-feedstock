@@ -38,12 +38,13 @@ requirements:
     - nose
     - numpy
     - opencv
+    - pandas
     - peakutils
     - pims
+    - psutil
     - scipy
     - scikit-image
     - scikit-learn
-    - spyder
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
