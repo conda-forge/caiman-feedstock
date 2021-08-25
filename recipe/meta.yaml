@@ -43,15 +43,13 @@ requirements:
     - pims
     - psutil
     - pynwb =1.4.0
+    - pyqtgraph
     - scipy
     - scikit-image
     - scikit-learn
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
-    - pyqtgraph
-    - pynwb
-
 test:
   imports:
     - caiman
