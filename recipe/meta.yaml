@@ -42,6 +42,7 @@ requirements:
     - peakutils
     - pims
     - psutil
+    - pynwb =1.4.0
     - scipy
     - scikit-image
     - scikit-learn
