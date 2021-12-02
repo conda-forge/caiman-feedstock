@@ -1,4 +1,7 @@
 provider:
   win: azure
 conda_forge_output_validation: true
-channel_priority: false
+channels:
+  sources:
+    - conda-forge
+    - defaults
