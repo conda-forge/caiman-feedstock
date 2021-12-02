@@ -27,7 +27,7 @@ requirements:
     - tensorflow
     - bokeh
     - future
-    - h5py =2.10.0
+    - h5py >=2.10.0
     - holoviews
     - ipykernel
     - ipython
@@ -42,7 +42,7 @@ requirements:
     - peakutils
     - pims
     - psutil
-    - pynwb =1.4.0
+    - pynwb
     - pyqtgraph
     - scipy
     - scikit-image
@@ -77,6 +77,5 @@ about:
 extra:
   recipe-maintainers:
     - pgunn
-    - epnev
     - zbarry
     - agiovann
