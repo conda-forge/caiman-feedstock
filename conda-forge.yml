@@ -5,3 +5,4 @@ channels:
   sources:
     - conda-forge
     - defaults
+channel_priority: false
