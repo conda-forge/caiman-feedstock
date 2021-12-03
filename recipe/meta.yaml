@@ -1,5 +1,5 @@
 {% set name = "CaImAn" %}
-{% set version = "1.9.5" %}
+{% set version = "1.9.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 2182259ba50f42d4b686adc8f187afffcddba30cb61995a0a3213a176684888e
+  sha256: 8f2e5963463ec56bd861ce9a11fba88e1c43f1f12d7deb6ac9fd4cd279adbce5
 
 build:
   number: 0
@@ -27,7 +27,7 @@ requirements:
     - tensorflow
     - bokeh
     - future
-    - h5py =2.10.0
+    - h5py >=2.10.0,<3
     - holoviews
     - ipykernel
     - ipython
@@ -42,7 +42,7 @@ requirements:
     - peakutils
     - pims
     - psutil
-    - pynwb =1.4.0
+    - pynwb
     - pyqtgraph
     - scipy
     - scikit-image
@@ -77,6 +77,5 @@ about:
 extra:
   recipe-maintainers:
     - pgunn
-    - epnev
     - zbarry
     - agiovann

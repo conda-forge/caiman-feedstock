@@ -203,7 +203,6 @@ Feedstock Maintainers
 =====================
 
 * [@agiovann](https://github.com/agiovann/)
-* [@epnev](https://github.com/epnev/)
 * [@pgunn](https://github.com/pgunn/)
 * [@zbarry](https://github.com/zbarry/)
 
