@@ -50,6 +50,7 @@ requirements:
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
+    - z5py
 test:
   imports:
     - caiman
