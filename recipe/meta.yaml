@@ -1,5 +1,5 @@
 {% set name = "CaImAn" %}
-{% set version = "1.9.7" %}
+{% set version = "1.9.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 5e7b2852494e9ba5f8cf3fd80ed5bf29a1121c05e85962adc8f300d0b243d1a0
+  sha256: ccd05311a6ff0c1402a03e1a4ad0f672281afce0e4b74579dfcf4be1759b285c
 
 build:
   number: 0
@@ -50,6 +50,7 @@ requirements:
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
+    - z5py
 test:
   imports:
     - caiman
