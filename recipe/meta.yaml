@@ -24,10 +24,10 @@ requirements:
     - ripgrep
   run:
     - python
-    - tensorflow
+    - tensorflow >=2.4.0
     - bokeh
     - future
-    - h5py >=2.10.0,<3
+    - h5py >=2.10.0
     - holoviews
     - ipykernel
     - ipython
