@@ -32,6 +32,7 @@ requirements:
     - ipykernel
     - ipython
     - ipyparallel
+    - jinja2 >= 3.1.1
     - jupyter
     - matplotlib
     - mypy
@@ -39,6 +40,7 @@ requirements:
     - numpy
     - opencv
     - pandas
+    - panel >= 0.12.7
     - peakutils
     - pims
     - psutil
