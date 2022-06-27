@@ -52,7 +52,7 @@ requirements:
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
-    - z5py
+    - z5py >= 2.0.15
 test:
   imports:
     - caiman
