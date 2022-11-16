@@ -19,14 +19,14 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-  host:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - ripgrep
+  host:
     - python
     - pip
     - numpy
     - cython
-    - ripgrep
   run:
     - python
     - tensorflow >=2.4.0
