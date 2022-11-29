@@ -33,7 +33,7 @@ requirements:
     - bokeh
     - future
     - h5py >=2.10.0
-    - holoviews
+    - holoviews =1.15.2
     - ipykernel
     - ipython
     - ipyparallel
