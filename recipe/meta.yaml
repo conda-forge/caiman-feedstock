@@ -12,6 +12,8 @@ source:
 build:
   number: 0
   skip: true  # [py<38]
+  entry_points:
+    - caimanmanager = caiman.caimanmanager:main
 
 requirements:
   build:
