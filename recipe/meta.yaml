@@ -66,9 +66,9 @@ test:
   imports:
     - caiman
   commands:
-    - caimanmanager.py install
-    - caimanmanager.py check
-    - caimanmanager.py test
+    - caimanmanager install
+    - caimanmanager check
+    - caimanmanager test
 
 about:
   home: http://github.com/flatironinstitute/caiman
