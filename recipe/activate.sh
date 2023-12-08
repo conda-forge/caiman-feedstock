@@ -6,3 +6,5 @@ export VECLIB_MAXIMUM_THREADS=1
 export OMP_NUM_THREADS=1
 export KERAS_BACKEND=tensorflow
 export TF_CPP_MIN_LOG_LEVEL=2
+export CAIMAN_RELEASE=1
+
