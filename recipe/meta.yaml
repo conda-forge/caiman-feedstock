@@ -1,5 +1,5 @@
 {% set name = "CaImAn" %}
-{% set version = "1.10.2" %}
+{% set version = "1.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 76e9fc2e8ef5414087be7970dd0717a5280d048a5c1bc31fa08108d3807017c4
+  sha256: 2e81f17148f05a6235e372fbb5a92b2ea8971b718dbb2d70a43b6dade9278143
 
 build:
   number: 0
