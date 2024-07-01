@@ -10,7 +10,7 @@ source:
   sha256: 4fef04740e157ddddbc7ceaf662c031885f6c1f91fb78056829d8ea6c564464f
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   entry_points:
     - caimanmanager = caiman.caimanmanager:main
