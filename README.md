@@ -280,6 +280,3 @@ Feedstock Maintainers
 
 * [@pgunn](https://github.com/pgunn/)
 
-
-<!-- dummy commit to enable rerendering -->
-
