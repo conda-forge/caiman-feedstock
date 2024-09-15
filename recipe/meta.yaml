@@ -10,17 +10,19 @@ source:
   sha256: a2bb5a11fd4e8dcd293730d780cd6187b07956cd0e840c27041ea9e7c7ac75e8
   patches:
     # pytest not nose
-    - 0001-Try-to-use-pytest-for-tests.patch
-    - 0002-Make-tensorflow-and-optional-dependency.patch
+    - patches/0001-Try-to-use-pytest-for-tests.patch
+    - patches/0002-Make-tensorflow-and-optional-dependency.patch
     # These are tests that depend on tensorflow
     # Tensorflow cannot be installed on conda-forge without an other channel
     # As this recipe is being build on conda-forge infrastructure, we cannot
     # run the full test suite.
-    - 0003-impororskip-tensorflow.patch
+    - patches/0003-impororskip-tensorflow.patch
 
 build:
   number: 1
   skip: true  # [py<39]
+  # Tensorflow 2.15 was never compiled with Python 3.12 support on conda-forge
+  skip: true  # [py==312]
   entry_points:
     - caimanmanager = caiman.caimanmanager:main
 
@@ -77,9 +79,9 @@ requirements:
     # We have made the dependency optional and point users to an alternative
     # method. however the conda-forge packaging guidelines disallow depending
     # on external channels
-    - tensorflow >=2.4.0         # [unix]
+    - tensorflow >=2.4.0,<2.16   # [unix]
   run_constrained:               # [win]
-    - tensorflow >=2.4.0         # [win]
+    - tensorflow >=2.4.0,<2.16   # [win]
 test:
   imports:
     - caiman
