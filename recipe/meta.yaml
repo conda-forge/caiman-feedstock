@@ -9,9 +9,14 @@ source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: a2bb5a11fd4e8dcd293730d780cd6187b07956cd0e840c27041ea9e7c7ac75e8
   patches:
-    - optional_tensorflow.patch
     # pytest not nose
-    - 1405.patch
+    - 0001-Try-to-use-pytest-for-tests.patch
+    - 0002-Make-tensorflow-and-optional-dependency.patch
+    # These are tests that depend on tensorflow
+    # Tensorflow cannot be installed on conda-forge without an other channel
+    # As this recipe is being build on conda-forge infrastructure, we cannot
+    # run the full test suite.
+    - 0003-impororskip-tensorflow.patch
 
 build:
   number: 1
@@ -81,16 +86,6 @@ test:
   commands:
     - caimanmanager install
     - caimanmanager check
-    # These are tests that depend on tensorflow
-    # Tensorflow cannot be installed on conda-forge without an other channel
-    # As this recipe is being build on conda-forge infrastructure, we cannot
-    # run the full test suite.
-    # - rm ${SP_DIR}/caiman/tests/test_mrcnn.py       # [unix]
-    # - rm ${SP_DIR}/caiman/tests/test_onacid.py      # [unix]
-    # - rm ${SP_DIR}/caiman/tests/test_tensorflow.py  # [unix]
-    - del %SP_DIR%\caiman\tests\test_mrcnn.py       # [win]
-    - del %SP_DIR%\caiman\tests\test_onacid.py      # [win]
-    - del %SP_DIR%\caiman\tests\test_tensorflow.py  # [win]
     - caimanmanager test
 
 about:

@@ -1,0 +1,66 @@
+From b3c80c706dd18b3ff39f7d662066c82f815240f4 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sun, 15 Sep 2024 19:06:49 -0400
+Subject: [PATCH 3/3] impororskip tensorflow
+
+---
+ caiman/tests/test_mrcnn.py      | 2 ++
+ caiman/tests/test_onacid.py     | 2 ++
+ caiman/tests/test_tensorflow.py | 2 ++
+ 3 files changed, 6 insertions(+)
+
+diff --git a/caiman/tests/test_mrcnn.py b/caiman/tests/test_mrcnn.py
+index 80346ed9..1266cbfe 100644
+--- a/caiman/tests/test_mrcnn.py
++++ b/caiman/tests/test_mrcnn.py
+@@ -2,6 +2,7 @@
+ 
+ import numpy as np
+ import os
++import pytest
+ 
+ import caiman as cm
+ from caiman.paths import caiman_datadir
+@@ -45,6 +46,7 @@ def mrcnn(img, size_range, weights_path):
+     return ROIs
+ 
+ def test_mrcnn():
++    pytest.importorskip("tensorflow")
+     weights_path = download_model('mask_rcnn')
+     summary_images = cm.load(download_demo('demo_voltage_imaging_summary_images.tif'))
+     ROIs = mrcnn(img=summary_images.transpose([1, 2, 0]), size_range=[5, 22],
+diff --git a/caiman/tests/test_onacid.py b/caiman/tests/test_onacid.py
+index 15248251..93dd648d 100644
+--- a/caiman/tests/test_onacid.py
++++ b/caiman/tests/test_onacid.py
+@@ -3,6 +3,7 @@
+ import code
+ import numpy.testing as npt
+ import os
++import pytest
+ from caiman.source_extraction import cnmf
+ from caiman.paths import caiman_datadir
+ 
+@@ -74,5 +75,6 @@ def demo():
+ 
+ 
+ def test_onacid():
++    pytest.importorskip('tensorflow')
+     demo()
+ 
+diff --git a/caiman/tests/test_tensorflow.py b/caiman/tests/test_tensorflow.py
+index 906ca671..f4e022c7 100644
+--- a/caiman/tests/test_tensorflow.py
++++ b/caiman/tests/test_tensorflow.py
+@@ -2,6 +2,8 @@
+ 
+ import numpy as np
+ import os
++import pytest
++pytest.importorskip('tensorflow')
+ 
+ from caiman.paths import caiman_datadir
+ from caiman.utils.utils import load_graph
+-- 
+2.46.0
+
