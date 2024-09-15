@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/flatironinstitute/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: a2bb5a11fd4e8dcd293730d780cd6187b07956cd0e840c27041ea9e7c7ac75e8
+  patches:
+    - optional_tensorflow.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   entry_points:
     - caimanmanager = caiman.caimanmanager:main
@@ -20,15 +22,16 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy <2.0.0                           # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - ripgrep
   host:
     - python
     - pip
-    - numpy <2.0.0
+    - setuptools
+    - numpy
     - cython
   run:
     - python
@@ -42,10 +45,12 @@ requirements:
     - jinja2 >=3.1.1
     - jupyter
     - jupyter_bokeh
-    - matplotlib
+    - matplotlib-base
     - mypy
     - nose
-    - numpy <2.0.0
+    # Numpy will export a compatible requirement
+    # range, this sets the lower bound
+    - numpy >=1.22.0
     - opencv
     - pandas
     - panel >=1.0.2
@@ -57,17 +62,33 @@ requirements:
     - scipy >=1.10.1
     - scikit-image >=0.19.0
     - scikit-learn >=1.2
-    - tensorflow >=2.4.0,<2.16
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
     - zarr
+    # TensorFlow is not available for windows on conda-forge
+    # We have made the dependency optional and point users to an alternative
+    # method. however the conda-forge packaging guidelines disallow depending
+    # on external channels
+    - tensorflow >=2.4.0,<2.16   # [unix]
+  run_constrained:               # [win]
+    - tensorflow >=2.4.0,<2.16   # [win]
 test:
   imports:
     - caiman
   commands:
     - caimanmanager install
     - caimanmanager check
+    # These are tests that depend on tensorflow
+    # Tensorflow cannot be installed on conda-forge without an other channel
+    # As this recipe is being build on conda-forge infrastructure, we cannot
+    # run the full test suite.
+    # - rm ${SP_DIR}/caiman/tests/test_mrcnn.py       # [unix]
+    # - rm ${SP_DIR}/caiman/tests/test_onacid.py      # [unix]
+    # - rm ${SP_DIR}/caiman/tests/test_tensorflow.py  # [unix]
+    - del %SP_DIR%\caiman\tests\test_mrcnn.py       # [win]
+    - del %SP_DIR%\caiman\tests\test_onacid.py      # [win]
+    - del %SP_DIR%\caiman\tests\test_tensorflow.py  # [win]
     - caimanmanager test
 
 about:
