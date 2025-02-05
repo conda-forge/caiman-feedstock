@@ -52,6 +52,7 @@ requirements:
     - pims
     - psutil
     - pynwb
+    - pyside6
     - pytest
     - pytest-cov
     - pyqtgraph
