@@ -55,11 +55,11 @@ requirements:
     - pyside6
     - pytest
     - pytest-cov
+    - pytorch
     - pyqtgraph
     - scipy >=1.10.1
     - scikit-image >=0.19.0
     - scikit-learn >=1.2
-    - tensorflow >=2.4.0,<2.16
     - tifffile
     - tk >=8,!=8.6.9
     - tqdm
