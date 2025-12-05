@@ -62,6 +62,7 @@ requirements:
     - scikit-image >=0.19.0
     - scikit-learn >=1.2
     - tifffile
+    - torchvision
     - tk >=8,!=8.6.9
     - tqdm
     - zarr
