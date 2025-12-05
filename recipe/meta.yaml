@@ -42,6 +42,7 @@ requirements:
     - jinja2 >=3.1.1
     - jupyter
     - jupyter_bokeh
+    - keras
     - matplotlib
     - mypy
     - numpy <2.0.0
